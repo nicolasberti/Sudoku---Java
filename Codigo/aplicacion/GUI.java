@@ -108,8 +108,6 @@ public class GUI extends JFrame {
 					if(juego.comprobar() == true) {
 						cronometro.desactivar();
 						JLabel mensaje = new JLabel();
-						mensaje.setIcon(new ImageIcon(GUI.class.getResource("/img/bailando.gif")));
-						JOptionPane.showMessageDialog(null, mensaje);
 						boton_validar.setVisible(false);
 						Iterator<JLabel> it = labelCeldas.iterator();
 						// Bloquea todas las celdas
@@ -120,17 +118,17 @@ public class GUI extends JFrame {
 										//OBS: No uso el it.hasNext() tal que las labels son las mismas que las iteraciones de los for anidados.
 										JLabel label = it.next();
 										Celda celda = juego.getMatriz(i, j).getCelda(fila, colum);
-										celda.proteger();
-										// En el caso que haya algunas que salgan en rojo, se ponen en azul.
-										if(celda.getRepetida()) {
-											celda.getEntidadGrafica().setTipo(1);
+										// Actualiza las imagenes en el caso de que aparezca en rojas. Sin considerar las amarillas.
+										if(celda.getProtegida() == false) {
+											actualizarIcono(celda, label);
 										}
-										// Se actualizan las imagenes
-										actualizarIcono(celda, label);
+										celda.proteger();
 									}
 								}
 							}
 						}
+						mensaje.setIcon(new ImageIcon(GUI.class.getResource("/img/bailando.gif")));
+						JOptionPane.showMessageDialog(null, mensaje);
 					} else {
 					// Juego incorrecto:
 						
