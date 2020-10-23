@@ -21,6 +21,7 @@ public class Matriz {
 		return matriz[i][j];
 	}
 	
+	
 	// Comprueba que en la matriz no esten repetidos los números.
 	// Devuelve true si los números no están repetidos, false en caso contrario.
 	public boolean comprobar() {

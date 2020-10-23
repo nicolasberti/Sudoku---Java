@@ -131,7 +131,6 @@ public class GUI extends JFrame {
 						JOptionPane.showMessageDialog(null, mensaje);
 					} else {
 					// Juego incorrecto:
-						
 						/*
 						 * Se muestran graficamente las celdas que están incumpliendo las reglas del juego.
 						 * OBS: No uso el it.hasNext() tal que las labels son las mismas que las iteraciones de los for anidados.

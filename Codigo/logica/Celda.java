@@ -76,4 +76,5 @@ public class Celda {
 		return valor == ((Celda)celda).getValor();
 	}
 	
+	
 }
